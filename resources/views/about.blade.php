@@ -1,5 +1,4 @@
 <x-layouts.app>
-    {{-- Set the browser tab title --}}
     <x-slot:title>
         About Us
     </x-slot:title>

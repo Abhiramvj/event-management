@@ -1,46 +1,12 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mango Events And Media - Home</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-    <style>
-        .font-serif { font-family: 'Playfair Display', serif; }
-        .font-sans { font-family: 'Poppins', sans-serif; }
-    </style>
-</head>
-<body class="font-sans bg-gray-50">
+<x-layouts.app>
+    <x-slot:title>
+        Mango Events And Media - Home
+    </x-slot:title>
 
     {{-- HERO SECTION --}}
-    <div class="relative h-screen bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/333333/ffffff?text=Live+Events');">
+    <div class="relative h-screen bg-[#210640]">
         <div class="absolute inset-0 bg-black opacity-40"></div>
-        <header class="absolute top-0 left-0 right-0 z-20">
-            {{-- This is the transparent header unique to the homepage --}}
-            <nav class="container mx-auto px-6 lg:px-16 py-6 flex justify-between items-center">
-                <div class="text-white text-center">
-                    <h1 class="font-serif text-3xl font-bold tracking-wider">Mango</h1>
-                    <p class="text-xs tracking-[0.2em]">EVENTS AND MEDIA</p>
-                </div>
-                {{-- === EDITED SECTION BELOW === --}}
-                <ul class="hidden md:flex items-center space-x-8 uppercase text-white text-sm font-light tracking-wider">
-                    <li><a href="{{ route('home') }}" class="border-b-2 border-white pb-1">Home</a></li>
-                    <li><a href="{{ route('about') }}" class="hover:text-gray-300">About Us</a></li>
-                    <li><a href="{{ route('services') }}" class="hover:text-gray-300">Services</a></li>
-                    <li><a href="{{ route('gallery') }}" class="hover:text-gray-300">Gallery</a></li>
-                    <li><a href="{{ route('blogs') }}" class="hover:text-gray-300">Blogs</a></li>
-                    <li><a href="{{ route('contact') }}" class="bg-white text-black px-5 py-2 hover:bg-gray-200 transition">Contact Us</a></li>
-                </ul>
-                {{-- === END EDITED SECTION === --}}
-                <div class="md:hidden"><button class="text-white"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg></button></div>
-            </nav>
-        </header>
+
         <div class="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
             <h2 class="font-serif text-4xl md:text-6xl font-bold leading-tight drop-shadow-md">Turning Your Dreams</h2>
             <h3 class="font-serif text-4xl md:text-6xl font-bold leading-tight mt-2 drop-shadow-md">Into Remarkable Events</h3>
@@ -51,9 +17,8 @@
     <section class="py-24">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div class="text-left">
-                <h2 class="font-serif text-4xl md:text-5xl text-gray-800">About Adam</h2>
-                <p class="mt-6 text-gray-600 leading-relaxed">Welcome to Adam Group of Events, a premier event management company dedicated to creating unforgettable experiences tailored to your unique needs.</p>
-                <a href="{{ route('about') }}" class="inline-block mt-8 border border-gray-400 rounded-full px-8 py-3 text-gray-700 hover:bg-gray-800 hover:text-white hover:border-gray-800 transition">Read More</a>
+                <h2 class="font-serif text-4xl md:text-5xl text-gray-800">OUR STORY</h2>
+                <p class="mt-6 text-gray-600 leading-relaxed">Mango Events and Media is planning to host spectacular events in various locations across India and internationally, including the UAE, Kingdom of Saudi Arabia, Bahrain, Oman, Qatar, Singapore, Malaysia, Thailand, USA, UK, EU, and Seychelles. We have already successfully conducted award-winning events in Qatar, and we look forward to bringing more unforgettable experiences to audiences worldwide.</p>
             </div>
             <div class="grid grid-cols-2 grid-rows-2 gap-4 h-96">
                 <img src="https://placehold.co/400x600/d1d5db/333333?text=Event+1" alt="Event 1" class="rounded-2xl object-cover w-full h-full col-span-1 row-span-2">
@@ -159,8 +124,4 @@
         </div>
     </section>
 
-    {{-- REUSABLE FOOTER COMPONENT --}}
-    <x-footer />
-
-</body>
-</html>
+</x-layouts.app>

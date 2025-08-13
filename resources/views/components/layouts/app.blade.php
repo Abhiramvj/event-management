@@ -24,29 +24,60 @@
     {{-- ================================================================= --}}
     {{-- STANDARD HEADER FOR INNER PAGES --}}
     {{-- ================================================================= --}}
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <nav class="container mx-auto px-6 lg:px-16 py-4 flex justify-between items-center">
-            {{-- Logo --}}
-            <div class="text-gray-800 text-center">
-                <a href="{{ route('home') }}">
-                    <h1 class="font-serif text-3xl font-bold tracking-wider">ADAM</h1>
-                    <p class="text-xs tracking-[0.2em]">GROUP OF EVENTS</p>
-                </a>
-            </div>
+    <header class="w-full bg-[#28034e] shadow-lg">
+    <nav class="container-fluid mx-auto flex items-center justify-between px-6 lg:px-16 py-4">
+        {{-- Logo --}}
+        <a href="{{ route('home') }}" class="flex items-center gap-3 group">
+            <img
+    src="{{ asset('images/logo.png') }}"
+    alt="Mango Events & Media Logo"
+    class="h-16 md:h-28 lg:h-32 w-auto group-hover:scale-105 transition-transform duration-300"
+    style="max-width: 300px;"
+>
 
-            {{-- Navigation Links --}}
-            <ul class="hidden md:flex items-center space-x-8 uppercase text-gray-700 text-sm font-light tracking-wider">
-                <li><a href="{{ route('home') }}" class="hover:text-black">Home</a></li>
-                {{-- Example of how to show an "active" state --}}
-                <li><a href="{{ route('about') }}" class="{{ request()->routeIs('about') ? 'text-black border-b-2 border-black pb-1' : 'hover:text-black' }}">About Us</a></li>
-                <li><a href="{{ route('services') }}" class="{{ request()->routeIs('services') ? 'text-black border-b-2 border-black pb-1' : 'hover:text-black' }}">Services</a></li>
-                <li><a href="{{ route('gallery') }}" class="{{ request()->routeIs('gallery') ? 'text-black border-b-2 border-black pb-1' : 'hover:text-black' }}">Gallery</a></li>
-                <li><a href="{{ route('blogs') }}" class="{{ request()->routeIs('blogs') ? 'text-black border-b-2 border-black pb-1' : 'hover:text-black' }}">Blogs</a></li>
-                <li><a href="{{ route('contact') }}" class="bg-gray-800 text-white px-5 py-2 hover:bg-black transition">Contact Us</a></li>
-            </ul>
-             <div class="md:hidden"><button class="text-gray-800"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" /></svg></button></div>
-        </nav>
-    </header>
+        </a>
+        {{-- Navbar Links --}}
+        <ul class="hidden md:flex items-center space-x-6 lg:space-x-10 uppercase text-white text-sm font-medium tracking-wide">
+            <li><a href="{{ route('home') }}" class="pb-1 border-b-2 border-transparent hover:border-white transition">Home</a></li>
+            <li><a href="{{ route('about') }}" class="hover:text-yellow-400 transition">About Us</a></li>
+            <li><a href="{{ route('services') }}" class="hover:text-yellow-400 transition">Services</a></li>
+            <li><a href="{{ route('gallery') }}" class="hover:text-yellow-400 transition">Gallery</a></li>
+            <li><a href="{{ route('blogs') }}" class="hover:text-yellow-400 transition">Blogs</a></li>
+            <li>
+                <a href="{{ route('contact') }}"
+                   class="ml-2 px-5 py-2 bg-yellow-400 text-[#210640] font-semibold rounded-full shadow hover:bg-yellow-300 border border-yellow-400 transition">
+                   Contact Us
+                </a>
+            </li>
+        </ul>
+
+        {{-- Mobile menu button --}}
+        <button class="md:hidden text-white focus:outline-none" id="navbar-mobile-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </button>
+    </nav>
+
+    {{-- Mobile Dropdown --}}
+    <div id="navbar-mobile-menu" class="md:hidden bg-[#210640] px-6 py-3 hidden">
+        <ul class="space-y-3 text-white uppercase font-medium">
+            <li><a href="{{ route('home') }}" class="block hover:text-yellow-400">Home</a></li>
+            <li><a href="{{ route('about') }}" class="block hover:text-yellow-400">About Us</a></li>
+            <li><a href="{{ route('services') }}" class="block hover:text-yellow-400">Services</a></li>
+            <li><a href="{{ route('gallery') }}" class="block hover:text-yellow-400">Gallery</a></li>
+            <li><a href="{{ route('blogs') }}" class="block hover:text-yellow-400">Blogs</a></li>
+            <li>
+                <a href="{{ route('contact') }}"
+                   class="block px-5 py-2 bg-yellow-400 text-[#210640] rounded-full shadow hover:bg-yellow-300 border border-yellow-400 transition w-max">
+                   Contact Us
+                </a>
+            </li>
+        </ul>
+    </div>
+</header>
+
 
     {{-- ================================================================= --}}
     {{-- MAIN CONTENT AREA --}}
