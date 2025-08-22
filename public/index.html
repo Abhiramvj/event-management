@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mango Events And Media - Home</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .font-sans { font-family: 'Poppins', sans-serif; }
+        .header-transparent { background-color: transparent; transition: background-color 0.3s ease; }
+        .header-scrolled { background-color: #210640; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+
+    <!-- Header Component Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="relative h-[85vh] bg-black">
+            <img src="images/aboutus.png" alt="A vibrant concert with a large crowd and stage pyrotechnics" class="absolute inset-0 h-full w-full object-cover" />
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
+                <h1 class="font-serif text-5xl font-bold leading-tight md:text-7xl drop-shadow-md">Unforgettable Events</h1>
+                <p class="mt-4 max-w-2xl text-lg md:text-xl drop-shadow-sm">Crafting remarkable experiences, from corporate functions to grand celebrations.</p>
+            </div>
+        </div>
+
+        <section class="py-24">
+            <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="text-left">
+                    <h2 class="font-serif text-4xl md:text-5xl text-gray-800">OUR STORY</h2>
+                    <p class="mt-6 text-gray-600 leading-relaxed">
+                        Mango Events and Media is planning to host spectacular events in various locations across India and internationally, including the UAE, Kingdom of Saudi Arabia, Bahrain, Oman, Qatar, Singapore, Malaysia, Thailand, USA, UK, EU, and Seychelles. We have already successfully conducted award-winning events in Qatar, and we look forward to bringing more unforgettable experiences to audiences worldwide.
+                    </p>
+                </div>
+                <div>
+                    <a href="gallery.html" class="relative block group">
+                        <img src="images/videoimg.png" alt="Promotional image linking to the video gallery" class="rounded-3xl shadow-2xl w-full h-auto object-cover">
+                        <div class="absolute inset-0 flex items-center justify-center rounded-3xl transition-opacity duration-300" style="background-color: rgba(0, 0, 0, 0.4);">
+                            <svg class="w-20 h-20 text-white opacity-80 group-hover:opacity-100 transform group-hover:scale-110 transition-transform duration-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24">
+            <div class="container mx-auto px-6">
+                <div class="relative h-[900px] flex items-center justify-center rounded-3xl overflow-hidden shadow-2xl">
+                    <img src="images/story.png" alt="A collage of artists and performers at an event" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-black opacity-30"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 text-center">
+            <div class="container mx-auto px-6">
+                <h2 class="font-serif text-4xl md:text-5xl text-gray-800">Our Services</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-gray-600">We specialize in turning your event dreams into reality, ensuring every detail is executed flawlessly. With our expertise, you can relax and enjoy the celebration.</p>
+                <a href="services.html" class="inline-block mt-16 border border-gray-400 rounded-full px-8 py-3 text-gray-700 hover:bg-gray-800 hover:text-white hover:border-gray-800 transition">View All</a>
+            </div>
+        </section>
+
+        <section class="h-80 bg-cover bg-center bg-fixed" style="background-image: url('https://placehold.co/1920x800/222222/FFD700?text=MANGO');">
+            <div class="h-full flex items-center justify-center text-white bg-black/50">
+                <div class="text-center"></div>
+            </div>
+        </section>
+
+        <section class="py-24">
+            <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="h-full w-full">
+                    <img src="images/decor.png" alt="Elegant event decor" class="rounded-3xl object-cover w-full h-full">
+                </div>
+                <div>
+                    <h2 class="font-serif text-4xl md:text-5xl text-gray-800">Drop Us a Line</h2>
+                    <!-- MODIFIED FORM -->
+                    <form id="contact-form-index" class="mt-8 space-y-6">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <input type="text" name="name" placeholder="Name" required class="w-full p-4 rounded-full bg-white border border-gray-200 focus:ring-2 focus:ring-gray-400 focus:outline-none">
+                            <input type="text" name="phone" placeholder="Phone Number" required class="w-full p-4 rounded-full bg-white border border-gray-200 focus:ring-2 focus:ring-gray-400 focus:outline-none">
+                        </div>
+                        <div>
+                            <input type="email" name="email" placeholder="Email" required class="w-full p-4 rounded-full bg-white border border-gray-200 focus:ring-2 focus:ring-gray-400 focus:outline-none">
+                        </div>
+                        <div>
+                            <select name="service" required class="w-full p-4 rounded-full bg-white border border-gray-200 focus:ring-2 focus:ring-gray-400 focus:outline-none appearance-none">
+                                <option value="">Select Service</option>
+                                <option value="Entertainment Events">Entertainment Events</option>
+                                <option value="Musical Concerts">Musical Concerts</option>
+                                <option value="Wedding & Catering">Wedding & Catering</option>
+                                <option value="Corporate Exhibitions/Conferences">Corporate Exhibitions/Conferences</option>
+                                <option value="College Events">College Events</option>
+                                <option value="Product Launches">Product Launches</option>
+                                <option value="Award and Recognition Shows">Award and Recognition Shows</option>
+                                <option value="Celebrity Appearances">Celebrity Appearances</option>
+                                <option value="Artist Sourcing and Management">Artist Sourcing and Management</option>
+                                <option value="Property/Health Expos">Property/Health Expos</option>
+                                <option value="Event Technical Solutions">Event Technical Solutions</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div>
+                            <textarea name="message" placeholder="Message" rows="5" required class="w-full p-4 rounded-3xl bg-white border border-gray-200 focus:ring-2 focus:ring-gray-400 focus:outline-none"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" id="submit-button-index" class="w-full md:w-auto bg-gray-800 text-white font-bold rounded-full px-10 py-4 hover:bg-gray-900 transition">SEND MESSAGE</button>
+                        </div>
+                        <p id="form-result-index" class="text-center mt-4"></p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Component Placeholder -->
+    <div id="footer-placeholder"></div>
+    
+    <script src="js/site.js"></script>
+
+    <!-- NEW SCRIPT for Form Submission -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Note: We use unique IDs for the form on this page to avoid conflicts
+            const form = document.getElementById('contact-form-index');
+            const submitButton = document.getElementById('submit-button-index');
+            const formResult = document.getElementById('form-result-index');
+
+            if (form) { // Only run if the form exists on this page
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    // --- Configuration ---
+                    // 1. Replace with your actual Web3Forms Access Key
+                    const accessKey = 'caa3b616-bc82-49a8-9c01-3f7b8468535d';
+                    
+                    // 2. Replace with your WhatsApp number including the country code (no '+' or spaces)
+                    const whatsappNumber = '917012650090'; 
+                    // --- End Configuration ---
+
+                    const formData = new FormData(form);
+                    const object = Object.fromEntries(formData);
+                    
+                    // Add the access key to the data object
+                    object.access_key = accessKey;
+
+                    const json = JSON.stringify(object);
+
+                    formResult.textContent = 'Sending, please wait...';
+                    formResult.style.color = 'gray';
+                    submitButton.disabled = true;
+
+                    fetch('https://api.web3forms.com/submit', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json'
+                        },
+                        body: json
+                    })
+                    .then(async (response) => {
+                        let jsonResponse = await response.json();
+                        if (response.status == 200) {
+                            formResult.textContent = 'Message sent successfully! Redirecting to WhatsApp...';
+                            formResult.style.color = 'green';
+                            
+                            const name = formData.get('name');
+                            const phone = formData.get('phone');
+                            const service = formData.get('service');
+                            const message = formData.get('message');
+
+                            const whatsappMessage = `New Inquiry from ${name}:\n\nPhone: ${phone}\nService: ${service}\nMessage: ${message}`;
+                            const encodedMessage = encodeURIComponent(whatsappMessage);
+                            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+                            
+                            setTimeout(() => {
+                                window.location.href = whatsappUrl;
+                            }, 2000);
+
+                        } else {
+                            console.log(response);
+                            formResult.textContent = jsonResponse.message || 'An error occurred. Please try again.';
+                            formResult.style.color = 'red';
+                            submitButton.disabled = false;
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                        formResult.textContent = 'Something went wrong. Please check your connection.';
+                        formResult.style.color = 'red';
+                        submitButton.disabled = false;
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
