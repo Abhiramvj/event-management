@@ -1,13 +1,9 @@
 // js/site.js
 document.addEventListener("DOMContentLoaded", function() {
 
-    // --- Function to load and initialize the header ---
     const loadHeader = () => {
         fetch('header.html')
-            .then(response => {
-                if (!response.ok) throw new Error('Network response was not ok');
-                return response.text();
-            })
+            .then(response => response.text())
             .then(data => {
                 document.getElementById('header-placeholder').innerHTML = data;
                 initializeHeaderScripts();
@@ -15,45 +11,59 @@ document.addEventListener("DOMContentLoaded", function() {
             .catch(error => console.error('Error fetching header:', error));
     };
 
-    // --- Function to load and initialize the footer ---
     const loadFooter = () => {
         fetch('footer.html')
-            .then(response => {
-                if (!response.ok) throw new Error('Network response was not ok');
-                return response.text();
-            })
+            .then(response => response.text())
             .then(data => {
                 document.getElementById('footer-placeholder').innerHTML = data;
                 initializeFooterScripts();
             })
             .catch(error => console.error('Error fetching footer:', error));
     };
-    
-    // --- All scripts that depend on the header's HTML go here ---
+
     const initializeHeaderScripts = () => {
-        // 1. Handle scroll effect for the header
         const header = document.getElementById('main-header');
         if (header) {
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    header.classList.add('header-scrolled');
-                } else {
-                    header.classList.remove('header-scrolled');
-                }
+                header.classList.toggle('header-scrolled', window.scrollY > 50);
             });
         }
 
-        // 2. Highlight the active navigation link
-        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-        const navLinks = document.querySelectorAll('.nav-link');
-        navLinks.forEach(link => {
-            if (link.getAttribute('href') === currentPage) {
-                link.classList.add('border-yellow-400');
+        // --- NEW AND IMPROVED ACTIVE LINK LOGIC ---
+        // This new logic correctly handles clean URLs like "/about"
+        const currentPath = window.location.pathname; // This will be "/" or "/about", etc.
+
+        // Handle Desktop Links
+        const desktopLinks = document.querySelectorAll('#main-header .nav-link');
+        desktopLinks.forEach(link => {
+            const linkHref = link.getAttribute('href');
+            // Check for homepage: path is "/" and link is "index.html"
+            if (currentPath === '/' && linkHref === 'index.html') {
                 link.classList.remove('border-transparent');
+                link.classList.add('border-yellow-400');
+            } 
+            // Check for other pages: if "/about" is inside "about.html"
+            else if (currentPath !== '/' && linkHref.includes(currentPath.substring(1))) {
+                link.classList.remove('border-transparent');
+                link.classList.add('border-yellow-400');
             }
         });
 
-        // 3. Mobile menu toggle
+        // Handle Mobile Links
+        const mobileLinks = document.querySelectorAll('#navbar-mobile-menu a');
+        mobileLinks.forEach(link => {
+            const linkHref = link.getAttribute('href');
+            // Check for homepage
+            if (currentPath === '/' && linkHref === 'index.html') {
+                link.classList.add('text-yellow-400');
+            } 
+            // Check for other pages
+            else if (currentPath !== '/' && linkHref.includes(currentPath.substring(1))) {
+                link.classList.add('text-yellow-400');
+            }
+        });
+
+        // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('navbar-mobile-btn');
         const mobileMenu = document.getElementById('navbar-mobile-menu');
         if (mobileMenuBtn && mobileMenu) {
@@ -63,16 +73,13 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     };
 
-    // --- All scripts that depend on the footer's HTML go here ---
     const initializeFooterScripts = () => {
-        // Set the current year in the footer
         const yearSpan = document.getElementById('year');
         if (yearSpan) {
             yearSpan.textContent = new Date().getFullYear();
         }
     };
 
-    // --- Load the components ---
     loadHeader();
     loadFooter();
 });
