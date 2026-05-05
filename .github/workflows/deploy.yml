@@ -32,4 +32,6 @@ jobs:
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
-          server-dir: ./public_html/ # Adjust this if your cPanel path is different (e.g., ./public_html/subfolder/)
+          server-dir: public_html/ # Remove the leading ./
+          protocol: ftp # Explicitly set protocol to ftp
+          # If you still get errors, try changing server-dir to ./ if your FTP user starts inside public_html
