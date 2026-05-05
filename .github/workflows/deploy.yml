@@ -33,4 +33,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: ./
-          protocol: ftp   #2
+          protocol: ftp
+          port: 21
