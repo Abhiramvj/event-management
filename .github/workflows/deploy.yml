@@ -33,4 +33,4 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: ./dist/
           server-dir: public_html/ # Remove the leading ./
-          protocol: ftp # Explicitly set protocol to ftp
+          protocol: ftp 
