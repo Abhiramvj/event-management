@@ -1,1 +1,52 @@
 @import "tailwindcss";
+
+@theme {
+  --color-primary: #210640;
+  --color-accent: #FACC15;
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Poppins", sans-serif;
+
+  --shadow-premium: 0 25px 50px -12px rgba(33, 6, 64, 0.15);
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-block px-10 py-4 bg-accent text-primary font-bold rounded-full hover:bg-white hover:scale-105 transition-all duration-300 shadow-lg text-center;
+  }
+  
+  .btn-outline {
+    @apply inline-block px-10 py-4 border-2 border-accent text-accent font-bold rounded-full hover:bg-accent hover:text-primary transition-all duration-300 text-center;
+  }
+
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+
+  .glass-dark {
+    @apply bg-black/40 backdrop-blur-xl border border-white/5;
+  }
+
+  .nav-link {
+    @apply relative text-white font-medium tracking-wide hover:text-accent transition-colors duration-300 after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent after:transition-all after:duration-300 hover:after:w-full;
+  }
+}
+
+@layer base {
+  body {
+    @apply font-sans text-gray-800 antialiased selection:bg-accent selection:text-primary;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+/* Custom Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

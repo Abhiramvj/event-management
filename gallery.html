@@ -1,139 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gallery | Mango Events & Media</title>
-  <link rel="icon" href="/images/logo-fav.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="/src/style.css" rel="stylesheet">
-  <style>
-    .font-serif { font-family: 'Playfair Display', serif; }
-    .font-sans { font-family: 'Poppins', sans-serif; }
-    .header-transparent { background-color: transparent; transition: background-color 0.3s ease; }
-    .header-scrolled { background-color: #210640; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); }
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gallery | Mango Events & Media</title>
+    <link rel="icon" href="/images/logo-fav.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="/src/style.css" rel="stylesheet">
 </head>
-<body class="font-sans bg-gray-50">
+<body class="bg-white">
 
-  <!-- Header -->
-  <div id="header-placeholder"></div>
+    <!-- Header Component Placeholder -->
+    <div id="header-placeholder"></div>
 
-  <main>
-    <!-- Hero Section -->
-    <div class="relative h-72 md:h-96 bg-cover bg-center" style="background-image: url('images/aboutus.png');">
-      <div class="absolute inset-0 bg-black opacity-50"></div>
-      <div class="container mx-auto px-6 h-full flex flex-col items-center justify-center text-white relative z-10">
-        <h1 class="font-serif text-4xl md:text-6xl font-bold">Gallery</h1>
-      </div>
-    </div>
+    <main>
+        <!-- HERO -->
+        <section class="relative h-[50vh] flex items-center justify-center overflow-hidden">
+            <img src="images/aboutus.png" alt="Gallery Hero" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-primary/60 backdrop-blur-[2px]"></div>
+            <div class="relative z-10 container mx-auto px-6 text-center text-white">
+                <span class="text-accent font-bold uppercase tracking-[0.3em] mb-4 block">Visual Stories</span>
+                <h1 class="font-serif text-5xl md:text-7xl font-bold">Our Portfolio</h1>
+            </div>
+        </section>
 
-    <!-- Gallery Section -->
-    <section class="py-20 md:py-28 bg-white">
-      <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-          <h2 class="font-serif text-4xl md:text-5xl text-gray-800">See Our Events in Action</h2>
-          <p class="mt-4 text-lg text-gray-600">A showcase of the energy, passion, and unforgettable moments we create.</p>
+        <!-- VIDEO SHOWCASE -->
+        <section class="py-32 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-20 space-y-4">
+                    <h2 class="font-serif text-4xl md:text-5xl text-primary leading-tight">Cinematic Highlights</h2>
+                    <p class="text-gray-500 text-lg">Experience the energy and scale of our events through these curated highlights.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+                    <!-- Video 1 -->
+                    <div class="bg-black rounded-[2.5rem] overflow-hidden shadow-premium aspect-video">
+                        <video class="w-full h-full object-cover" loop muted playsinline controls>
+                            <source src="videos/video1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <!-- Video 2 -->
+                    <div class="bg-black rounded-[2.5rem] overflow-hidden shadow-premium aspect-video">
+                        <video class="w-full h-full object-cover" loop muted playsinline controls>
+                            <source src="videos/video2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <!-- Video 3 -->
+                    <div class="bg-black rounded-[2.5rem] overflow-hidden shadow-premium aspect-video">
+                        <video class="w-full h-full object-cover" loop muted playsinline controls>
+                            <source src="videos/video3.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <!-- Video 4 -->
+                    <div class="bg-black rounded-[2.5rem] overflow-hidden shadow-premium aspect-video">
+                        <video class="w-full h-full object-cover" loop muted playsinline controls>
+                            <source src="videos/video4.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <!-- Video 5 -->
+                    <div class="bg-black rounded-[2.5rem] overflow-hidden shadow-premium aspect-video">
+                        <video class="w-full h-full object-cover" loop muted playsinline controls>
+                            <source src="videos/video5.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <!-- Video 6 -->
+                    <div class="bg-black rounded-[2.5rem] overflow-hidden shadow-premium aspect-video">
+                        <video class="w-full h-full object-cover" loop muted playsinline controls>
+                            <source src="videos/video6.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <!-- Video 7 -->
+                    <div class="bg-black rounded-[2.5rem] overflow-hidden shadow-premium aspect-video">
+                        <video class="w-full h-full object-cover" loop muted playsinline controls>
+                            <source src="videos/video7.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <!-- Video 8 -->
+                    <div class="bg-black rounded-[2.5rem] overflow-hidden shadow-premium aspect-video">
+                        <video class="w-full h-full object-cover" loop muted playsinline controls>
+                            <source src="videos/video8.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <!-- Video 9 -->
+                    <div class="bg-black rounded-[2.5rem] overflow-hidden shadow-premium aspect-video">
+                        <video class="w-full h-full object-cover" loop muted playsinline controls>
+                            <source src="videos/video9.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IMAGE GALLERY -->
+        <section class="py-32 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="text-center max-w-2xl mx-auto mb-20 space-y-4">
+                    <h2 class="font-serif text-4xl md:text-5xl text-primary leading-tight">Captured Moments</h2>
+                    <p class="text-gray-500 text-lg">Still frames of the magic we've created around the world.</p>
+                </div>
+
+                <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="gallery-item relative group overflow-hidden rounded-[2rem] shadow-premium cursor-pointer" data-src="images/entertainment.png">
+                        <img src="images/entertainment.png" alt="Entertainment Event" class="w-full h-auto group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                            <div class="btn-primary scale-75 group-hover:scale-100 transition-transform">View Full</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item relative group overflow-hidden rounded-[2rem] shadow-premium cursor-pointer" data-src="images/concert.jpg">
+                        <img src="images/concert.jpg" alt="Musical Concert" class="w-full h-auto group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                            <div class="btn-primary scale-75 group-hover:scale-100 transition-transform">View Full</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item relative group overflow-hidden rounded-[2rem] shadow-premium cursor-pointer" data-src="images/collegeevents.webp">
+                        <img src="images/collegeevents.webp" alt="College Event" class="w-full h-auto group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                            <div class="btn-primary scale-75 group-hover:scale-100 transition-transform">View Full</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item relative group overflow-hidden rounded-[2rem] shadow-premium cursor-pointer" data-src="images/decor.png">
+                        <img src="images/decor.png" alt="Event Decor" class="w-full h-auto group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                            <div class="btn-primary scale-75 group-hover:scale-100 transition-transform">View Full</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item relative group overflow-hidden rounded-[2rem] shadow-premium cursor-pointer" data-src="images/wedding.webp">
+                        <img src="images/wedding.webp" alt="Wedding Celebration" class="w-full h-auto group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                            <div class="btn-primary scale-75 group-hover:scale-100 transition-transform">View Full</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item relative group overflow-hidden rounded-[2rem] shadow-premium cursor-pointer" data-src="images/events.png">
+                        <img src="images/events.png" alt="Grand Event" class="w-full h-auto group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
+                            <div class="btn-primary scale-75 group-hover:scale-100 transition-transform">View Full</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIGHTBOX MODAL -->
+        <div id="lightbox" class="fixed inset-0 z-[100] bg-primary/95 backdrop-blur-xl flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500">
+            <button id="close-lightbox" class="absolute top-10 right-10 text-white hover:text-accent transition-colors z-10">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+            <div class="container mx-auto px-6 max-w-5xl">
+                <img id="lightbox-img" src="" alt="Full view" class="w-full h-auto rounded-[2rem] shadow-2xl scale-90 transition-transform duration-500">
+            </div>
         </div>
-        
-        <!-- Uniform Video Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          <!-- Video 1 Card -->
-          <div class="flex flex-col items-center">
-            <div class="overflow-hidden rounded-2xl shadow-lg w-full h-80 bg-black">
-              <video class="w-full h-full object-contain rounded-2xl" loop controls muted playsinline>
-                <source src="videos/video1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <h3 class="font-serif text-lg mt-4 text-white text-center bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-400 px-4 py-2 rounded-full shadow-lg w-fit">
-              Company Profile Video
-            </h3>
-          </div>
-          
-          <!-- Video 2 Card -->
-          <div class="flex flex-col items-center">
-            <div class="overflow-hidden rounded-2xl shadow-lg w-full h-80 bg-black">
-              <video class="w-full h-full object-contain rounded-2xl" loop controls muted playsinline>
-                <source src="videos/video2.mp4" type="video/mp4">
-              </video>
-            </div>
-            <h3 class="font-serif text-lg mt-4 text-white text-center bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-400 px-4 py-2 rounded-full shadow-lg w-fit">
-              Event Highlights
-            </h3>
-          </div>
-          
-          <!-- Video 3 Card -->
-          <div class="flex flex-col items-center">
-            <div class="overflow-hidden rounded-2xl shadow-lg w-full h-80 bg-black">
-              <video class="w-full h-full object-contain rounded-2xl" loop controls muted playsinline>
-                <source src="videos/video3.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          
-          <!-- Video 4 Card -->
-          <div class="flex flex-col items-center">
-            <div class="overflow-hidden rounded-2xl shadow-lg w-full h-80 bg-black">
-              <video class="w-full h-full object-contain rounded-2xl" loop controls muted playsinline>
-                <source src="videos/video4.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          
-          <!-- Video 5 Card -->
-          <div class="flex flex-col items-center">
-            <div class="overflow-hidden rounded-2xl shadow-lg w-full h-80 bg-black">
-              <video class="w-full h-full object-contain rounded-2xl" loop controls muted playsinline>
-                <source src="videos/video5.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          
-          <!-- Video 6 Card -->
-          <div class="flex flex-col items-center">
-            <div class="overflow-hidden rounded-2xl shadow-lg w-full h-80 bg-black">
-              <video class="w-full h-full object-contain rounded-2xl" loop controls muted playsinline>
-                <source src="videos/video6.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          
-          <!-- Video 7 Card -->
-          <div class="flex flex-col items-center">
-            <div class="overflow-hidden rounded-2xl shadow-lg w-full h-80 bg-black">
-              <video class="w-full h-full object-contain rounded-2xl" loop controls muted playsinline>
-                <source src="videos/video7.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          
-          <!-- Video 8 Card -->
-          <div class="flex flex-col items-center">
-            <div class="overflow-hidden rounded-2xl shadow-lg w-full h-80 bg-black">
-              <video class="w-full h-full object-contain rounded-2xl" loop controls muted playsinline>
-                <source src="videos/video8.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-          
-          <!-- Video 9 Card -->
-          <div class="flex flex-col items-center">
-            <div class="overflow-hidden rounded-2xl shadow-lg w-full h-80 bg-black">
-              <video class="w-full h-full object-contain rounded-2xl" loop controls muted playsinline>
-                <source src="videos/video9.mp4" type="video/mp4">
-              </video>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+    </main>
 
-  <!-- Footer -->
-  <div id="footer-placeholder"></div>
-  <script src="js/site.js"></script>
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+    <script src="js/site.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const closeBtn = document.getElementById('close-lightbox');
+
+            // Use data-src on each .gallery-item for reliable per-card click handling
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const src = item.getAttribute('data-src');
+                    lightboxImg.src = src;
+                    lightbox.classList.remove('opacity-0', 'pointer-events-none');
+                    setTimeout(() => {
+                        lightboxImg.classList.remove('scale-90');
+                        lightboxImg.classList.add('scale-100');
+                    }, 50);
+                });
+            });
+
+            const closeLightbox = () => {
+                lightboxImg.classList.remove('scale-100');
+                lightboxImg.classList.add('scale-90');
+                setTimeout(() => {
+                    lightbox.classList.add('opacity-0', 'pointer-events-none');
+                }, 300);
+            };
+
+            closeBtn.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) closeLightbox();
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeLightbox();
+            });
+        });
+    </script>
 </body>
 </html>

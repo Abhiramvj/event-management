@@ -7,109 +7,118 @@
     <link rel="icon" href="/images/logo-fav.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link href="/src/style.css" rel="stylesheet">
-    <style>
-        .font-serif { font-family: 'Playfair Display', serif; }
-        .font-sans { font-family: 'Poppins', sans-serif; }
-        .header-transparent { background-color: transparent; transition: background-color 0.3s ease; }
-        .header-scrolled { background-color: #210640; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06); }
-    </style>
 </head>
-<body class="font-sans bg-gray-50">
+<body class="bg-white">
 
     <!-- Header Component Placeholder -->
     <div id="header-placeholder"></div>
 
     <main>
-        <div class="relative h-72 md:h-96 bg-cover bg-center" style="background-image: url('images/aboutus.png');">
-            <div class="absolute inset-0 bg-black opacity-50"></div>
-            <div class="container mx-auto px-6 h-full flex flex-col items-center justify-center text-white relative z-10">
-                <h1 class="font-serif text-4xl md:text-6xl font-bold">Our Services</h1>
+        <!-- HERO -->
+        <section class="relative h-[50vh] flex items-center justify-center overflow-hidden">
+            <img src="images/aboutus.png" alt="Services Hero" class="absolute inset-0 w-full h-full object-cover">
+            <div class="absolute inset-0 bg-primary/60 backdrop-blur-[2px]"></div>
+            <div class="relative z-10 container mx-auto px-6 text-center text-white">
+                <span class="text-accent font-bold uppercase tracking-[0.3em] mb-4 block">Our Expertise</span>
+                <h1 class="font-serif text-5xl md:text-7xl font-bold">What We Do</h1>
             </div>
-        </div>
+        </section>
 
-        <section class="py-20 md:py-28 bg-white">
+        <!-- CORE SERVICES -->
+        <section class="py-32 bg-white">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="font-serif text-4xl md:text-5xl text-gray-800">Crafting Unforgettable Moments</h2>
-                    <p class="mt-4 text-lg text-gray-600">Expert Planning, Flawless Execution</p>
+                <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+                    <h2 class="font-serif text-4xl md:text-5xl text-primary leading-tight">Expert Planning, <span class="text-accent italic">Flawless</span> Execution</h2>
+                    <p class="text-gray-500 text-lg">We turn complex requirements into seamless experiences. Our diverse range of services covers every aspect of modern event management.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                    <a href="#" class="group block text-center">
-                        <div class="overflow-hidden rounded-2xl shadow-lg">
-                            <img src="images/entertainment.webp" alt="Entertainment Events" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Service Card 1 -->
+                    <div class="group relative overflow-hidden rounded-[2.5rem] shadow-premium aspect-[4/5]">
+                        <img src="images/entertainment.webp" alt="Entertainment" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 w-full p-10 space-y-4">
+                            <h3 class="text-3xl font-serif text-white">Entertainment</h3>
+                            <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Creating vibrant, high-energy entertainment experiences for every audience.</p>
+                            <a href="contact.html" class="inline-block text-accent font-bold uppercase tracking-widest text-xs border-b border-accent/0 hover:border-accent transition-all">Enquire Now</a>
                         </div>
-                        <h3 class="font-serif text-3xl mt-6 text-gray-800">Entertainment Events</h3>
-                    </a>
-                    <a href="#" class="group block text-center">
-                        <div class="overflow-hidden rounded-2xl shadow-lg">
-                            <img src="images/coorporate.avif" alt="Corporate Events" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="group relative overflow-hidden rounded-[2.5rem] shadow-premium aspect-[4/5]">
+                        <img src="images/musical.jpeg" alt="Concerts" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 w-full p-10 space-y-4">
+                            <h3 class="text-3xl font-serif text-white">Live Concerts</h3>
+                            <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Staging unforgettable live performances with world-class production value.</p>
+                            <a href="contact.html" class="inline-block text-accent font-bold uppercase tracking-widest text-xs border-b border-accent/0 hover:border-accent transition-all">Enquire Now</a>
                         </div>
-                        <h3 class="font-serif text-3xl mt-6 text-gray-800">Corporate Events</h3>
-                    </a>
-                    <a href="#" class="group block text-center">
-                        <div class="overflow-hidden rounded-2xl shadow-lg">
-                            <img src="images/musical.jpeg" alt="Musical Concerts" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="group relative overflow-hidden rounded-[2.5rem] shadow-premium aspect-[4/5]">
+                        <img src="images/wedding.webp" alt="Weddings" class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 w-full p-10 space-y-4">
+                            <h3 class="text-3xl font-serif text-white">Luxury Events</h3>
+                            <p class="text-gray-300 text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500">Bespoke planning for social gatherings, weddings, and private celebrations.</p>
+                            <a href="contact.html" class="inline-block text-accent font-bold uppercase tracking-widest text-xs border-b border-accent/0 hover:border-accent transition-all">Enquire Now</a>
                         </div>
-                        <h3 class="font-serif text-3xl mt-6 text-gray-800">Musical Concerts</h3>
-                    </a>
-                    <a href="#" class="group block text-center">
-                        <div class="overflow-hidden rounded-2xl shadow-lg">
-                            <img src="images/collegeevents.webp" alt="College Events" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
-                        </div>
-                        <h3 class="font-serif text-3xl mt-6 text-gray-800">College Events</h3>
-                    </a>
-                    <a href="#" class="group block text-center md:col-span-2 mt-8">
-                        <div class="overflow-hidden rounded-2xl shadow-lg">
-                            <img src="images/wedding.webp" alt="Wedding and Catering" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 ease-in-out">
-                        </div>
-                        <h3 class="font-serif text-3xl mt-6 text-gray-800">Wedding & Catering</h3>
-                    </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="py-20 md:py-28 bg-gray-100">
+        <!-- DETAILED BREAKDOWN -->
+        <section class="py-32 bg-gray-50">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="font-serif text-4xl md:text-5xl text-gray-800">Our Full Range of Services</h2>
-                    <p class="mt-4 text-lg text-gray-600">The details that make your event special.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="glass p-10 rounded-[3rem] space-y-8 border-primary/5 shadow-2xl">
+                        <div class="w-16 h-16 bg-primary text-accent rounded-2xl flex items-center justify-center shadow-lg">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary italic font-serif">Artist & Talent</h3>
+                        <ul class="space-y-4 text-gray-500">
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Global Artist Sourcing</li>
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Celebrity Management</li>
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Multi-Genre Performers</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass p-10 rounded-[3rem] space-y-8 border-primary/5 shadow-2xl">
+                        <div class="w-16 h-16 bg-primary text-accent rounded-2xl flex items-center justify-center shadow-lg">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a2 2 0 00-1.96 1.414l-.718 2.154a2 2 0 01-3.059 1.058l-2.387-2.387a2 2 0 01-.447-1.022l-.477-2.387a2 2 0 00-1.414-1.96l-2.154-.718a2 2 0 01-1.058-3.059l2.387-2.387a2 2 0 011.022-.447l2.387-.477a2 2 0 001.96-1.414l.718-2.154a2 2 0 013.059-1.058l2.387 2.387a2 2 0 01.447 1.022l.477 2.387a2 2 0 001.414 1.96l2.154.718a2 2 0 011.058 3.059l-2.387 2.387zM12 15a3 3 0 110-6 3 3 0 010 6z"/></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary italic font-serif">Technical & AV</h3>
+                        <ul class="space-y-4 text-gray-500">
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> LED Screen Walling</li>
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Pro Audio & Lighting</li>
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Technical Staging</li>
+                        </ul>
+                    </div>
+
+                    <div class="glass p-10 rounded-[3rem] space-y-8 border-primary/5 shadow-2xl">
+                        <div class="w-16 h-16 bg-primary text-accent rounded-2xl flex items-center justify-center shadow-lg">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary italic font-serif">Branding</h3>
+                        <ul class="space-y-4 text-gray-500">
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Venue Design</li>
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Print Production</li>
+                            <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 bg-accent rounded-full"></span> Brand Activation</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-                    <div class="bg-white p-10 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                        <h3 class="font-serif text-2xl text-gray-900 mb-6">Event Management</h3>
-                        <ul class="list-disc list-inside space-y-3 text-gray-600">
-                            <li>Artist Sourcing and Management</li>
-                            <li>Award and Recognition Shows</li>
-                            <li>Product Launches</li>
-                            <li>Medical/Pharmaceutical Conferences</li>
-                            <li>Property/Health Expos</li>
-                            <li>Celebrity Appearances</li>
-                            <li>Corporate Exhibitions</li>
-                        </ul>
-                    </div>
-                    <div class="bg-white p-10 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                        <h3 class="font-serif text-2xl text-gray-900 mb-6">Technical Solutions</h3>
-                        <ul class="list-disc list-inside space-y-3 text-gray-600">
-                            <li>Venue Preparation</li>
-                            <li>Lighting</li>
-                            <li>PA Systems</li>
-                            <li>Display LED Walling</li>
-                            <li>Video Jockeys, DJs and RJs</li>
-                            <li>Event Technical Solutions</li>
-                        </ul>
-                    </div>
-                    <div class="bg-white p-10 rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                        <h3 class="font-serif text-2xl text-gray-900 mb-6">Support & Branding</h3>
-                        <ul class="list-disc list-inside space-y-3 text-gray-600">
-                            <li>Hospitality</li>
-                            <li>Power</li>
-                            <li>Print and Branding</li>
-                            <li>Event Promoters & Hostesses</li>
-                        </ul>
-                    </div>
-                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="py-32 bg-white">
+            <div class="container mx-auto px-6 text-center space-y-12">
+                <h2 class="font-serif text-4xl md:text-6xl text-primary max-w-4xl mx-auto">Have a specific requirement? We build custom solutions.</h2>
+                <a href="contact.html" class="btn-primary text-lg">Discuss Your Event</a>
             </div>
         </section>
     </main>

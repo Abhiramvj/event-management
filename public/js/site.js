@@ -25,50 +25,51 @@ document.addEventListener("DOMContentLoaded", function() {
         const header = document.getElementById('main-header');
         if (header) {
             window.addEventListener('scroll', () => {
-                header.classList.toggle('header-scrolled', window.scrollY > 50);
+                if (window.scrollY > 50) {
+                    header.classList.add('header-scrolled', 'glass-dark', 'py-2');
+                    header.classList.remove('header-transparent', 'py-4');
+                } else {
+                    header.classList.remove('header-scrolled', 'glass-dark', 'py-2');
+                    header.classList.add('header-transparent', 'py-4');
+                }
             });
         }
 
-        // --- NEW AND IMPROVED ACTIVE LINK LOGIC ---
-        // This new logic correctly handles clean URLs like "/about"
-        const currentPath = window.location.pathname; // This will be "/" or "/about", etc.
-
-        // Handle Desktop Links
-        const desktopLinks = document.querySelectorAll('#main-header .nav-link');
-        desktopLinks.forEach(link => {
-            const linkHref = link.getAttribute('href');
-            // Check for homepage: path is "/" and link is "index.html"
-            if (currentPath === '/' && linkHref === 'index.html') {
-                link.classList.remove('border-transparent');
-                link.classList.add('border-yellow-400');
-            } 
-            // Check for other pages: if "/about" is inside "about.html"
-            else if (currentPath !== '/' && linkHref.includes(currentPath.substring(1))) {
-                link.classList.remove('border-transparent');
-                link.classList.add('border-yellow-400');
+        // Active Link Logic
+        const currentPath = window.location.pathname;
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (currentPath.endsWith(href) || (currentPath === '/' && href === 'index.html')) {
+                link.classList.add('text-accent', 'after:w-full');
+                link.classList.remove('after:w-0');
             }
         });
 
-        // Handle Mobile Links
-        const mobileLinks = document.querySelectorAll('#navbar-mobile-menu a');
-        mobileLinks.forEach(link => {
-            const linkHref = link.getAttribute('href');
-            // Check for homepage
-            if (currentPath === '/' && linkHref === 'index.html') {
-                link.classList.add('text-yellow-400');
-            } 
-            // Check for other pages
-            else if (currentPath !== '/' && linkHref.includes(currentPath.substring(1))) {
-                link.classList.add('text-yellow-400');
-            }
-        });
-
-        // Mobile menu toggle
+        // Enhanced Mobile menu toggle
         const mobileMenuBtn = document.getElementById('navbar-mobile-btn');
         const mobileMenu = document.getElementById('navbar-mobile-menu');
+        
         if (mobileMenuBtn && mobileMenu) {
             mobileMenuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
+                const isHidden = mobileMenu.classList.contains('hidden');
+                
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    // Small timeout to allow the 'hidden' removal to register before animating
+                    setTimeout(() => {
+                        mobileMenu.classList.remove('max-h-0');
+                        mobileMenu.classList.add('max-h-[500px]');
+                    }, 10);
+                } else {
+                    mobileMenu.classList.remove('max-h-[500px]');
+                    mobileMenu.classList.add('max-h-0');
+                    // Wait for transition to finish before adding hidden
+                    setTimeout(() => {
+                        mobileMenu.classList.add('hidden');
+                    }, 300);
+                }
             });
         }
     };
