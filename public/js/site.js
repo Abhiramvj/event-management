@@ -24,15 +24,19 @@ document.addEventListener("DOMContentLoaded", function() {
     const initializeHeaderScripts = () => {
         const header = document.getElementById('main-header');
         if (header) {
-            window.addEventListener('scroll', () => {
+            const handleScroll = () => {
                 if (window.scrollY > 50) {
                     header.classList.add('header-scrolled', 'glass-dark', 'py-2');
-                    header.classList.remove('header-transparent', 'py-4');
+                    header.classList.remove('header-transparent', 'py-5', 'py-4');
                 } else {
                     header.classList.remove('header-scrolled', 'glass-dark', 'py-2');
-                    header.classList.add('header-transparent', 'py-4');
+                    header.classList.add('header-transparent', 'py-5');
+                    header.classList.remove('py-2', 'py-4');
                 }
-            });
+            };
+
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // Initialize state on load
         }
 
         // Active Link Logic
@@ -59,12 +63,12 @@ document.addEventListener("DOMContentLoaded", function() {
                     mobileMenu.classList.remove('hidden');
                     // Small timeout to allow the 'hidden' removal to register before animating
                     setTimeout(() => {
-                        mobileMenu.classList.remove('max-h-0');
-                        mobileMenu.classList.add('max-h-[500px]');
+                        mobileMenu.classList.remove('max-h-0', 'opacity-0');
+                        mobileMenu.classList.add('max-h-screen', 'opacity-100');
                     }, 10);
                 } else {
-                    mobileMenu.classList.remove('max-h-[500px]');
-                    mobileMenu.classList.add('max-h-0');
+                    mobileMenu.classList.remove('max-h-screen', 'opacity-100');
+                    mobileMenu.classList.add('max-h-0', 'opacity-0');
                     // Wait for transition to finish before adding hidden
                     setTimeout(() => {
                         mobileMenu.classList.add('hidden');
