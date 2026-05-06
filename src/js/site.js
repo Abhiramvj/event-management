@@ -1,6 +1,6 @@
 // js/site.js
 const loadHeader = () => {
-    fetch('/header.html')
+    fetch(`/header.html?v=${new Date().getTime()}`)
         .then(response => {
             if (!response.ok) throw new Error('Header fetch failed');
             return response.text();
@@ -16,7 +16,7 @@ const loadHeader = () => {
 };
 
 const loadFooter = () => {
-    fetch('/footer.html')
+    fetch(`/footer.html?v=${new Date().getTime()}`)
         .then(response => {
             if (!response.ok) throw new Error('Footer fetch failed');
             return response.text();
